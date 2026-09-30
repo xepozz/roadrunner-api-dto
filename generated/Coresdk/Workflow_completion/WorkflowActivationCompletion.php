@@ -22,6 +22,20 @@ class WorkflowActivationCompletion extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string run_id = 1;</code>
      */
     protected $run_id = '';
+    /**
+     * Metrics for external payload storage downloads (retrievals) performed while processing
+     * this activation. Only set when external storage retrieved payloads.
+     *
+     * Generated from protobuf field <code>.coresdk.common.ExternalStorageMetrics payload_download_metrics = 4;</code>
+     */
+    protected $payload_download_metrics = null;
+    /**
+     * Metrics for external payload storage uploads (stores) performed while processing this
+     * activation. Only set when external storage stored payloads.
+     *
+     * Generated from protobuf field <code>.coresdk.common.ExternalStorageMetrics payload_upload_metrics = 5;</code>
+     */
+    protected $payload_upload_metrics = null;
     protected $status;
 
     /**
@@ -34,6 +48,12 @@ class WorkflowActivationCompletion extends \Google\Protobuf\Internal\Message
      *           The run id from the workflow activation you are completing
      *     @type \Coresdk\Workflow_completion\Success $successful
      *     @type \Coresdk\Workflow_completion\Failure $failed
+     *     @type \Coresdk\Common\ExternalStorageMetrics $payload_download_metrics
+     *           Metrics for external payload storage downloads (retrievals) performed while processing
+     *           this activation. Only set when external storage retrieved payloads.
+     *     @type \Coresdk\Common\ExternalStorageMetrics $payload_upload_metrics
+     *           Metrics for external payload storage uploads (stores) performed while processing this
+     *           activation. Only set when external storage stored payloads.
      * }
      */
     public function __construct($data = NULL) {
@@ -115,6 +135,80 @@ class WorkflowActivationCompletion extends \Google\Protobuf\Internal\Message
     public function setFailed(\Coresdk\Workflow_completion\Failure|null $var)
     {
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Metrics for external payload storage downloads (retrievals) performed while processing
+     * this activation. Only set when external storage retrieved payloads.
+     *
+     * Generated from protobuf field <code>.coresdk.common.ExternalStorageMetrics payload_download_metrics = 4;</code>
+     * @return \Coresdk\Common\ExternalStorageMetrics|null
+     */
+    public function getPayloadDownloadMetrics()
+    {
+        return $this->payload_download_metrics;
+    }
+
+    public function hasPayloadDownloadMetrics()
+    {
+        return isset($this->payload_download_metrics);
+    }
+
+    public function clearPayloadDownloadMetrics()
+    {
+        unset($this->payload_download_metrics);
+    }
+
+    /**
+     * Metrics for external payload storage downloads (retrievals) performed while processing
+     * this activation. Only set when external storage retrieved payloads.
+     *
+     * Generated from protobuf field <code>.coresdk.common.ExternalStorageMetrics payload_download_metrics = 4;</code>
+     * @param \Coresdk\Common\ExternalStorageMetrics $var
+     * @return $this
+     */
+    public function setPayloadDownloadMetrics(\Coresdk\Common\ExternalStorageMetrics|null $var)
+    {
+        $this->payload_download_metrics = $var;
+
+        return $this;
+    }
+
+    /**
+     * Metrics for external payload storage uploads (stores) performed while processing this
+     * activation. Only set when external storage stored payloads.
+     *
+     * Generated from protobuf field <code>.coresdk.common.ExternalStorageMetrics payload_upload_metrics = 5;</code>
+     * @return \Coresdk\Common\ExternalStorageMetrics|null
+     */
+    public function getPayloadUploadMetrics()
+    {
+        return $this->payload_upload_metrics;
+    }
+
+    public function hasPayloadUploadMetrics()
+    {
+        return isset($this->payload_upload_metrics);
+    }
+
+    public function clearPayloadUploadMetrics()
+    {
+        unset($this->payload_upload_metrics);
+    }
+
+    /**
+     * Metrics for external payload storage uploads (stores) performed while processing this
+     * activation. Only set when external storage stored payloads.
+     *
+     * Generated from protobuf field <code>.coresdk.common.ExternalStorageMetrics payload_upload_metrics = 5;</code>
+     * @param \Coresdk\Common\ExternalStorageMetrics $var
+     * @return $this
+     */
+    public function setPayloadUploadMetrics(\Coresdk\Common\ExternalStorageMetrics|null $var)
+    {
+        $this->payload_upload_metrics = $var;
 
         return $this;
     }

@@ -6,4 +6,4 @@
 	url = https://github.com/temporalio/api-cloud.git
 [submodule "sdk-core"]
 	path = sdk-core
-	url = https://github.com/temporalio/sdk-core.git
+	url = https://github.com/temporalio/sdk-rust.git

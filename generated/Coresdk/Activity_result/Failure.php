@@ -20,6 +20,13 @@ class Failure extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 1;</code>
      */
     protected $failure = null;
+    /**
+     * Only meaningful on ActivityExecutionResult (lang -> core); ignored on ActivityResolution,
+     * which reuses this message.
+     *
+     * Generated from protobuf field <code>.coresdk.activity_result.ActivityTaskFailedCause cause = 2;</code>
+     */
+    protected $cause = 0;
 
     /**
      * Constructor.
@@ -28,6 +35,9 @@ class Failure extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Temporal\Api\Failure\V1\Failure $failure
+     *     @type int $cause
+     *           Only meaningful on ActivityExecutionResult (lang -> core); ignored on ActivityResolution,
+     *           which reuses this message.
      * }
      */
     public function __construct($data = NULL) {
@@ -62,6 +72,34 @@ class Failure extends \Google\Protobuf\Internal\Message
     public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
         $this->failure = $var;
+
+        return $this;
+    }
+
+    /**
+     * Only meaningful on ActivityExecutionResult (lang -> core); ignored on ActivityResolution,
+     * which reuses this message.
+     *
+     * Generated from protobuf field <code>.coresdk.activity_result.ActivityTaskFailedCause cause = 2;</code>
+     * @return int one of the values in {@see \Coresdk\Activity_result\ActivityTaskFailedCause}
+     */
+    public function getCause()
+    {
+        return $this->cause;
+    }
+
+    /**
+     * Only meaningful on ActivityExecutionResult (lang -> core); ignored on ActivityResolution,
+     * which reuses this message.
+     *
+     * Generated from protobuf field <code>.coresdk.activity_result.ActivityTaskFailedCause cause = 2;</code>
+     * @param int $var one of the values in {@see \Coresdk\Activity_result\ActivityTaskFailedCause}
+     * @return $this
+     */
+    public function setCause(int $var)
+    {
+        GPBUtil::checkEnum($var, \Coresdk\Activity_result\ActivityTaskFailedCause::class);
+        $this->cause = $var;
 
         return $this;
     }

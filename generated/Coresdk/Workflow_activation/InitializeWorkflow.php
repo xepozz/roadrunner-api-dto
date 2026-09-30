@@ -177,6 +177,14 @@ class InitializeWorkflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.common.v1.Priority priority = 25;</code>
      */
     protected $priority = null;
+    /**
+     * The run id recorded on the `WORKFLOW_EXECUTION_STARTED` event. Unlike the execution's current
+     * run id, this value is preserved across workflow resets. Mirrors the `original_execution_run_id`
+     * field from `WorkflowExecutionStartedEventAttributes`.
+     *
+     * Generated from protobuf field <code>string original_execution_run_id = 26;</code>
+     */
+    protected $original_execution_run_id = '';
 
     /**
      * Constructor.
@@ -245,6 +253,10 @@ class InitializeWorkflow extends \Google\Protobuf\Internal\Message
      *           See field in WorkflowExecutionStarted for more detail.
      *     @type \Temporal\Api\Common\V1\Priority $priority
      *           Priority of this workflow execution
+     *     @type string $original_execution_run_id
+     *           The run id recorded on the `WORKFLOW_EXECUTION_STARTED` event. Unlike the execution's current
+     *           run id, this value is preserved across workflow resets. Mirrors the `original_execution_run_id`
+     *           field from `WorkflowExecutionStartedEventAttributes`.
      * }
      */
     public function __construct($data = NULL) {
@@ -1046,6 +1058,36 @@ class InitializeWorkflow extends \Google\Protobuf\Internal\Message
     public function setPriority(\Temporal\Api\Common\V1\Priority|null $var)
     {
         $this->priority = $var;
+
+        return $this;
+    }
+
+    /**
+     * The run id recorded on the `WORKFLOW_EXECUTION_STARTED` event. Unlike the execution's current
+     * run id, this value is preserved across workflow resets. Mirrors the `original_execution_run_id`
+     * field from `WorkflowExecutionStartedEventAttributes`.
+     *
+     * Generated from protobuf field <code>string original_execution_run_id = 26;</code>
+     * @return string
+     */
+    public function getOriginalExecutionRunId()
+    {
+        return $this->original_execution_run_id;
+    }
+
+    /**
+     * The run id recorded on the `WORKFLOW_EXECUTION_STARTED` event. Unlike the execution's current
+     * run id, this value is preserved across workflow resets. Mirrors the `original_execution_run_id`
+     * field from `WorkflowExecutionStartedEventAttributes`.
+     *
+     * Generated from protobuf field <code>string original_execution_run_id = 26;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setOriginalExecutionRunId(string $var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->original_execution_run_id = $var;
 
         return $this;
     }
