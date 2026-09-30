@@ -57,6 +57,7 @@
   },
   "autoload": {
     "psr-4": {
+      "Coresdk\\": "generated/Coresdk",
       "RoadRunner\\": "generated/RoadRunner",
       "GPBMetadata\\": "generated/GPBMetadata",
       "Temporal\\": "generated/Temporal"
