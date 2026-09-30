@@ -26,6 +26,9 @@ With this repository, you can use pre-generated DTO messages for the following R
 - Status
 - WebSockets
 
+It also contains the Temporal API and the Temporal Core SDK (`coresdk.*`, namespace `Coresdk\`) messages from
+https://github.com/temporalio/sdk-core (the `sdk-core` submodule, `crates/common/protos/local`).
+
 The repository contains the pre-generated DTO files, and you can include the package in your PHP project to use them for
 making RPC calls to the RoadRunner server.
 

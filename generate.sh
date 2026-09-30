@@ -51,6 +51,16 @@ for i in `find ./proto -name "*.proto" -type f`; do
   --experimental_allow_proto3_optional
 done
 
+echo "Generating Temporal Core SDK API"
+
+for i in `find ./sdk-core/crates/common/protos/local -name "*.proto" -type f`; do
+  protoc \
+  --proto_path=sdk-core/crates/common/protos/local \
+  --proto_path=api/third_party/api \
+  --php_out=generated $i \
+  --experimental_allow_proto3_optional
+done
+
 echo "Removing Google Protobuf files"
 
 rm -rf ./generated/Google
