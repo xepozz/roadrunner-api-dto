@@ -53,10 +53,10 @@ done
 
 echo "Generating Temporal Core SDK API"
 
-for i in `find ./sdk-core/crates/common/protos/local -name "*.proto" -type f`; do
+for i in `find ./sdk-core/crates/protos/protos/local -name "*.proto" -type f`; do
   protoc \
-  --proto_path=sdk-core/crates/common/protos/local \
-  --proto_path=api/third_party/api \
+  --proto_path=sdk-core/crates/protos/protos/local \
+  --proto_path=sdk-core/crates/protos/protos/api_upstream \
   --php_out=generated $i \
   --experimental_allow_proto3_optional
 done

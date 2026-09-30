@@ -28,6 +28,13 @@ class ResolveSignalExternalWorkflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 2;</code>
      */
     protected $failure = null;
+    /**
+     * The server-reported cause when the signal failed. Unspecified when the signal succeeded or
+     * was cancelled before being sent.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.SignalExternalWorkflowExecutionFailedCause cause = 3;</code>
+     */
+    protected $cause = 0;
 
     /**
      * Constructor.
@@ -41,6 +48,9 @@ class ResolveSignalExternalWorkflow extends \Google\Protobuf\Internal\Message
      *     @type \Temporal\Api\Failure\V1\Failure $failure
      *           If populated, this signal either failed to be sent or was cancelled depending on failure
      *           type / info.
+     *     @type int $cause
+     *           The server-reported cause when the signal failed. Unspecified when the signal succeeded or
+     *           was cancelled before being sent.
      * }
      */
     public function __construct($data = NULL) {
@@ -109,6 +119,34 @@ class ResolveSignalExternalWorkflow extends \Google\Protobuf\Internal\Message
     public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
         $this->failure = $var;
+
+        return $this;
+    }
+
+    /**
+     * The server-reported cause when the signal failed. Unspecified when the signal succeeded or
+     * was cancelled before being sent.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.SignalExternalWorkflowExecutionFailedCause cause = 3;</code>
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\SignalExternalWorkflowExecutionFailedCause}
+     */
+    public function getCause()
+    {
+        return $this->cause;
+    }
+
+    /**
+     * The server-reported cause when the signal failed. Unspecified when the signal succeeded or
+     * was cancelled before being sent.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.SignalExternalWorkflowExecutionFailedCause cause = 3;</code>
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\SignalExternalWorkflowExecutionFailedCause}
+     * @return $this
+     */
+    public function setCause(int $var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\SignalExternalWorkflowExecutionFailedCause::class);
+        $this->cause = $var;
 
         return $this;
     }

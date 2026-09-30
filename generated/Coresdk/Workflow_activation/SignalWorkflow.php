@@ -36,6 +36,12 @@ class SignalWorkflow extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, .temporal.api.common.v1.Payload> headers = 5;</code>
      */
     private $headers;
+    /**
+     * Event ID of the `WORKFLOW_EXECUTION_SIGNALED` history event that produced this job.
+     *
+     * Generated from protobuf field <code>int64 originating_event_id = 6;</code>
+     */
+    protected $originating_event_id = 0;
 
     /**
      * Constructor.
@@ -49,6 +55,8 @@ class SignalWorkflow extends \Google\Protobuf\Internal\Message
      *           Identity of the sender of the signal
      *     @type array|\Google\Protobuf\Internal\MapField $headers
      *           Headers attached to the signal
+     *     @type int|string $originating_event_id
+     *           Event ID of the `WORKFLOW_EXECUTION_SIGNALED` history event that produced this job.
      * }
      */
     public function __construct($data = NULL) {
@@ -148,6 +156,32 @@ class SignalWorkflow extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Common\V1\Payload::class);
         $this->headers = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Event ID of the `WORKFLOW_EXECUTION_SIGNALED` history event that produced this job.
+     *
+     * Generated from protobuf field <code>int64 originating_event_id = 6;</code>
+     * @return int|string
+     */
+    public function getOriginatingEventId()
+    {
+        return $this->originating_event_id;
+    }
+
+    /**
+     * Event ID of the `WORKFLOW_EXECUTION_SIGNALED` history event that produced this job.
+     *
+     * Generated from protobuf field <code>int64 originating_event_id = 6;</code>
+     * @param int|string $var
+     * @return $this
+     */
+    public function setOriginatingEventId(int|string $var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->originating_event_id = $var;
 
         return $this;
     }

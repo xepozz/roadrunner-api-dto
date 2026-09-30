@@ -103,6 +103,14 @@ class ScheduleLocalActivity extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.coresdk.workflow_commands.ActivityCancellationType cancellation_type = 13;</code>
      */
     protected $cancellation_type = 0;
+    /**
+     * If set, the local activity arguments will be included in the resulting marker under the
+     * `input` key. This is disabled by default to avoid increasing history size unless the lang
+     * SDK explicitly chooses to expose it.
+     *
+     * Generated from protobuf field <code>bool include_arguments_in_marker = 14;</code>
+     */
+    protected $include_arguments_in_marker = false;
 
     /**
      * Constructor.
@@ -150,6 +158,10 @@ class ScheduleLocalActivity extends \Google\Protobuf\Internal\Message
      *           Defines how the workflow will wait (or not) for cancellation of the activity to be
      *           confirmed. Lang should default this to `WAIT_CANCELLATION_COMPLETED`, even though proto
      *           will default to `TRY_CANCEL` automatically.
+     *     @type bool $include_arguments_in_marker
+     *           If set, the local activity arguments will be included in the resulting marker under the
+     *           `input` key. This is disabled by default to avoid increasing history size unless the lang
+     *           SDK explicitly chooses to expose it.
      * }
      */
     public function __construct($data = NULL) {
@@ -567,6 +579,35 @@ class ScheduleLocalActivity extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Coresdk\Workflow_commands\ActivityCancellationType::class);
         $this->cancellation_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * If set, the local activity arguments will be included in the resulting marker under the
+     * `input` key. This is disabled by default to avoid increasing history size unless the lang
+     * SDK explicitly chooses to expose it.
+     *
+     * Generated from protobuf field <code>bool include_arguments_in_marker = 14;</code>
+     * @return bool
+     */
+    public function getIncludeArgumentsInMarker()
+    {
+        return $this->include_arguments_in_marker;
+    }
+
+    /**
+     * If set, the local activity arguments will be included in the resulting marker under the
+     * `input` key. This is disabled by default to avoid increasing history size unless the lang
+     * SDK explicitly chooses to expose it.
+     *
+     * Generated from protobuf field <code>bool include_arguments_in_marker = 14;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setIncludeArgumentsInMarker(bool $var)
+    {
+        $this->include_arguments_in_marker = $var;
 
         return $this;
     }

@@ -88,6 +88,12 @@ class ContinueAsNewWorkflowExecution extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.enums.v1.ContinueAsNewVersioningBehavior initial_versioning_behavior = 11;</code>
      */
     protected $initial_versioning_behavior = 0;
+    /**
+     * Delay before the first workflow task of the continued run is scheduled.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 12;</code>
+     */
+    protected $backoff_start_interval = null;
 
     /**
      * Constructor.
@@ -123,6 +129,8 @@ class ContinueAsNewWorkflowExecution extends \Google\Protobuf\Internal\Message
      *           Experimental. Optionally decide the versioning behavior that the first task of the new run should use.
      *           For example, choose to AutoUpgrade on continue-as-new instead of inheriting the pinned version
      *           of the previous run.
+     *     @type \Google\Protobuf\Duration $backoff_start_interval
+     *           Delay before the first workflow task of the continued run is scheduled.
      * }
      */
     public function __construct($data = NULL) {
@@ -460,6 +468,41 @@ class ContinueAsNewWorkflowExecution extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\ContinueAsNewVersioningBehavior::class);
         $this->initial_versioning_behavior = $var;
+
+        return $this;
+    }
+
+    /**
+     * Delay before the first workflow task of the continued run is scheduled.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 12;</code>
+     * @return \Google\Protobuf\Duration|null
+     */
+    public function getBackoffStartInterval()
+    {
+        return $this->backoff_start_interval;
+    }
+
+    public function hasBackoffStartInterval()
+    {
+        return isset($this->backoff_start_interval);
+    }
+
+    public function clearBackoffStartInterval()
+    {
+        unset($this->backoff_start_interval);
+    }
+
+    /**
+     * Delay before the first workflow task of the continued run is scheduled.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Duration backoff_start_interval = 12;</code>
+     * @param \Google\Protobuf\Duration $var
+     * @return $this
+     */
+    public function setBackoffStartInterval(\Google\Protobuf\Duration|null $var)
+    {
+        $this->backoff_start_interval = $var;
 
         return $this;
     }
