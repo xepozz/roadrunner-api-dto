@@ -22,6 +22,14 @@ class WorkflowCommand extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.temporal.api.sdk.v1.UserMetadata user_metadata = 100;</code>
      */
     protected $user_metadata = null;
+    /**
+     * Event group markers attached to the command. These are forwarded onto
+     * the corresponding server-side Command, and consequently surfaced on the
+     * resulting HistoryEvent. See `temporal/api/sdk/v1/event_group_marker.proto`.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 101;</code>
+     */
+    private $event_group_markers;
     protected $variant;
 
     /**
@@ -34,6 +42,10 @@ class WorkflowCommand extends \Google\Protobuf\Internal\Message
      *           User metadata that may or may not be persisted into history depending on the command type.
      *           Lang layers are expected to expose the setting of the internals of this metadata on a
      *           per-command basis where applicable.
+     *     @type \Temporal\Api\Sdk\V1\EventGroupMarker[] $event_group_markers
+     *           Event group markers attached to the command. These are forwarded onto
+     *           the corresponding server-side Command, and consequently surfaced on the
+     *           resulting HistoryEvent. See `temporal/api/sdk/v1/event_group_marker.proto`.
      *     @type \Coresdk\Workflow_commands\StartTimer $start_timer
      *     @type \Coresdk\Workflow_commands\ScheduleActivity $schedule_activity
      *     @type \Coresdk\Workflow_commands\QueryResult $respond_to_query
@@ -98,6 +110,36 @@ class WorkflowCommand extends \Google\Protobuf\Internal\Message
     public function setUserMetadata(\Temporal\Api\Sdk\V1\UserMetadata|null $var)
     {
         $this->user_metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * Event group markers attached to the command. These are forwarded onto
+     * the corresponding server-side Command, and consequently surfaced on the
+     * resulting HistoryEvent. See `temporal/api/sdk/v1/event_group_marker.proto`.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 101;</code>
+     * @return RepeatedField<\Temporal\Api\Sdk\V1\EventGroupMarker>
+     */
+    public function getEventGroupMarkers()
+    {
+        return $this->event_group_markers;
+    }
+
+    /**
+     * Event group markers attached to the command. These are forwarded onto
+     * the corresponding server-side Command, and consequently surfaced on the
+     * resulting HistoryEvent. See `temporal/api/sdk/v1/event_group_marker.proto`.
+     *
+     * Generated from protobuf field <code>repeated .temporal.api.sdk.v1.EventGroupMarker event_group_markers = 101;</code>
+     * @param \Temporal\Api\Sdk\V1\EventGroupMarker[] $var
+     * @return $this
+     */
+    public function setEventGroupMarkers(array|RepeatedField $var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \Temporal\Api\Sdk\V1\EventGroupMarker::class);
+        $this->event_group_markers = $arr;
 
         return $this;
     }

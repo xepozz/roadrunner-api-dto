@@ -48,7 +48,7 @@ DTO messages for the following RoadRunner plugins, under the `RoadRunner\` names
 
 The package also ships the [Temporal API](https://github.com/temporalio/api) and [Temporal Cloud API](https://github.com/temporalio/api-cloud) messages and gRPC clients under the `Temporal\Api\` namespace. They depend on the `google/common-protos` package, which you need to install yourself.
 
-It also ships the Temporal Core SDK (`coresdk.*`, namespace `Coresdk\`) messages from https://github.com/temporalio/sdk-core (the `sdk-core` submodule, `crates/common/protos/local`).
+It also ships the Temporal Core SDK (`coresdk.*`, namespace `Coresdk\`) messages from https://github.com/temporalio/sdk-rust (the `sdk-core` submodule at the `core-v0.9.0` release, `crates/protos/protos/local`).
 
 ## Generating DTOs
 

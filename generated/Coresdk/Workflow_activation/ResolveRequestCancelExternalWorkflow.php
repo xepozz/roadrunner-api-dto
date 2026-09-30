@@ -22,12 +22,17 @@ class ResolveRequestCancelExternalWorkflow extends \Google\Protobuf\Internal\Mes
      */
     protected $seq = 0;
     /**
-     * If populated, this signal either failed to be sent or was cancelled depending on failure
-     * type / info.
+     * If populated, the cancellation request failed.
      *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 2;</code>
      */
     protected $failure = null;
+    /**
+     * The server-reported cause when the cancellation request failed.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.CancelExternalWorkflowExecutionFailedCause cause = 3;</code>
+     */
+    protected $cause = 0;
 
     /**
      * Constructor.
@@ -39,8 +44,9 @@ class ResolveRequestCancelExternalWorkflow extends \Google\Protobuf\Internal\Mes
      *           Sequence number as provided by lang in the corresponding
      *           RequestCancelExternalWorkflowExecution command
      *     @type \Temporal\Api\Failure\V1\Failure $failure
-     *           If populated, this signal either failed to be sent or was cancelled depending on failure
-     *           type / info.
+     *           If populated, the cancellation request failed.
+     *     @type int $cause
+     *           The server-reported cause when the cancellation request failed.
      * }
      */
     public function __construct($data = NULL) {
@@ -77,8 +83,7 @@ class ResolveRequestCancelExternalWorkflow extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * If populated, this signal either failed to be sent or was cancelled depending on failure
-     * type / info.
+     * If populated, the cancellation request failed.
      *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 2;</code>
      * @return \Temporal\Api\Failure\V1\Failure|null
@@ -99,8 +104,7 @@ class ResolveRequestCancelExternalWorkflow extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * If populated, this signal either failed to be sent or was cancelled depending on failure
-     * type / info.
+     * If populated, the cancellation request failed.
      *
      * Generated from protobuf field <code>.temporal.api.failure.v1.Failure failure = 2;</code>
      * @param \Temporal\Api\Failure\V1\Failure $var
@@ -109,6 +113,32 @@ class ResolveRequestCancelExternalWorkflow extends \Google\Protobuf\Internal\Mes
     public function setFailure(\Temporal\Api\Failure\V1\Failure|null $var)
     {
         $this->failure = $var;
+
+        return $this;
+    }
+
+    /**
+     * The server-reported cause when the cancellation request failed.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.CancelExternalWorkflowExecutionFailedCause cause = 3;</code>
+     * @return int one of the values in {@see \Temporal\Api\Enums\V1\CancelExternalWorkflowExecutionFailedCause}
+     */
+    public function getCause()
+    {
+        return $this->cause;
+    }
+
+    /**
+     * The server-reported cause when the cancellation request failed.
+     *
+     * Generated from protobuf field <code>.temporal.api.enums.v1.CancelExternalWorkflowExecutionFailedCause cause = 3;</code>
+     * @param int $var one of the values in {@see \Temporal\Api\Enums\V1\CancelExternalWorkflowExecutionFailedCause}
+     * @return $this
+     */
+    public function setCause(int $var)
+    {
+        GPBUtil::checkEnum($var, \Temporal\Api\Enums\V1\CancelExternalWorkflowExecutionFailedCause::class);
+        $this->cause = $var;
 
         return $this;
     }

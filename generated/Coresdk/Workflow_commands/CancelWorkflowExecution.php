@@ -17,6 +17,10 @@ use Google\Protobuf\RepeatedField;
  */
 class CancelWorkflowExecution extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 1;</code>
+     */
+    protected $details = null;
 
     /**
      * Constructor.
@@ -24,11 +28,43 @@ class CancelWorkflowExecution extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
+     *     @type \Temporal\Api\Common\V1\Payloads $details
      * }
      */
     public function __construct($data = NULL) {
         \GPBMetadata\Temporal\Sdk\Core\WorkflowCommands\WorkflowCommands::initOnce();
         parent::__construct($data);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 1;</code>
+     * @return \Temporal\Api\Common\V1\Payloads|null
+     */
+    public function getDetails()
+    {
+        return $this->details;
+    }
+
+    public function hasDetails()
+    {
+        return isset($this->details);
+    }
+
+    public function clearDetails()
+    {
+        unset($this->details);
+    }
+
+    /**
+     * Generated from protobuf field <code>.temporal.api.common.v1.Payloads details = 1;</code>
+     * @param \Temporal\Api\Common\V1\Payloads $var
+     * @return $this
+     */
+    public function setDetails(\Temporal\Api\Common\V1\Payloads|null $var)
+    {
+        $this->details = $var;
+
+        return $this;
     }
 
 }
